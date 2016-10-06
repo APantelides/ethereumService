@@ -33,7 +33,7 @@ app.post('/api/challenge', (req, res) => {
 });
 
 app.post('/api/addUser', (req, res) => {
-
+  ethController.addUser(req, res);
 });
 
 app.post('/api/verifyUser', (req, res) => {

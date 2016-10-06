@@ -1,4 +1,4 @@
-// const addUserAction = require('./actions/addUserAction.js');
+const addUserAction = require('./actions/addUserAction.js');
 // const verifyUserAction = require('./actions/verifyUserAction');
 const createChallengeAction = require('./actions/createChallengeAction.js');
 // const outcomeChallengeAction = require('./actions/outcomeChallengeAction.js');
@@ -7,7 +7,7 @@ const rp = require('request-promise');
 
 const controller = {
   addUser: (req, res) => {
-
+    addUserAction.addUser(req, res);
   },
   verifyUser: (req, res) => {
 

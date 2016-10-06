@@ -18,11 +18,33 @@ const allowCrossDomain = (req, res, next) => { //CORS middlware
 };
 
 app.use(allowCrossDomain);
-app.user(bodyParser.json());
+app.use(bodyParser.json());
 
 //endpoints
 
 app.post('/api/challenge', (req, res) => {
+  ethController.createChallenge(req, res)
+  .then((challengeAddr) => {
+    res.status(200).send(challengeAddr);
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  });
+});
+
+app.post('/api/addUser', (req, res) => {
+
+});
+
+app.post('/api/verifyUser', (req, res) => {
+
+});
+
+app.post('/api/outcomeChallenge', (req, res) => {
+
+});
+
+app.post('/api/cancelChallenge', (req, res) => {
 
 });
 

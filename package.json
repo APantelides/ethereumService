@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./wait-for-it.sh db:5432 && nodemon index.js",
-    "testrpc": "node ./testrpc/testrpc.js"
+    "start": "./wait-for-it.sh db:5432 && testrpc && nodemon index.js"
   },
   "repository": {
     "type": "git",

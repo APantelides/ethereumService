@@ -1,7 +1,7 @@
 const addUserAction = require('./actions/addUserAction.js');
 // const verifyUserAction = require('./actions/verifyUserAction');
 const createChallengeAction = require('./actions/createChallengeAction.js');
-// const outcomeChallengeAction = require('./actions/outcomeChallengeAction.js');
+const outcomeChallengeAction = require('./actions/outcomeChallengeAction.js');
 // const cancelChallengeAction = require('./actions/cancelChallengeAction.js');
 const rp = require('request-promise');
 
@@ -23,7 +23,7 @@ const controller = {
     });
   },
   outcomeChallenge: (req, res) => {
-
+    outcomeChallengeAction.challengeOutcome(req, res);
   },
   cancelChallenge: (req, res) => {
 

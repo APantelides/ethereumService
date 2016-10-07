@@ -41,7 +41,7 @@ app.post('/api/verifyUser', (req, res) => {
 });
 
 app.post('/api/outcomeChallenge', (req, res) => {
-
+  ethController.outcomeChallenge(req, res);
 });
 
 app.post('/api/cancelChallenge', (req, res) => {

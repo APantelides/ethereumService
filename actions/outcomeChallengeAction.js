@@ -7,7 +7,7 @@ const web3 = web3Connection.web3;
 
 const outcomeChallengeAction = {
   challengeOutcome: (req, res) => {
-    const winnerIds = [1];
+    const winnerIds = req.body.winnerIds;
     const fromAddress = req.body.fromAddress;
     const contractAddress = req.body.contractAddress;
     const challengeContractInstance = web3.eth.contract(contractFuncs.contractObj).at(contractAddress);

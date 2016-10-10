@@ -52,6 +52,10 @@ app.get('/api/challenge', (req, res) => {
 
 });
 
+app.get('/api/accounts', (req, res) => {
+  ethController.testAddress(req, res);
+});
+
 const server = app.listen(3002, () => {
   console.log('Ethereum server running on port 3002!');
 });

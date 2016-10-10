@@ -2,6 +2,7 @@ const addUserAction = require('./actions/addUserAction.js');
 // const verifyUserAction = require('./actions/verifyUserAction');
 const createChallengeAction = require('./actions/createChallengeAction.js');
 const outcomeChallengeAction = require('./actions/outcomeChallengeAction.js');
+const testAddressAction = require('./actions/testAddressAction.js');
 // const cancelChallengeAction = require('./actions/cancelChallengeAction.js');
 const rp = require('request-promise');
 
@@ -30,6 +31,9 @@ const controller = {
   },
   getAllChallenges: (req, res) => {
 
+  },
+  testAddress: (req, res) => {
+    testAddressAction.testAddress(req, res);
   }
 };
 module.exports = controller;

@@ -9,7 +9,7 @@ const createChallengeAction = {
   createContract: req => new Promise((resolve, reject) => {
     const senderAddress = req.body.senderAddress || web3.eth.accounts[0];
     const challengeId = req.body.challengeId || 99;
-    const buyInAmount = req.body.buyInAmount || 1337;
+    const buyInAmount = web3.toWei(req.body.buyInAmount || 1337, 'ether');
     const challengeCreateDateTime = req.body.challengeCreateDateTime || 700007;
     const challengeStartDateTime = req.body.challengeStartDateTime || 700008;
     const challengeEndDateTime = req.body.challengeEndDateTime || 700009; 

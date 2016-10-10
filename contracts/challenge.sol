@@ -8,7 +8,7 @@ contract Challenge {
     mapping (uint => address) public participants;
     mapping (address => string) public participantNames;
     uint public pot;
-    uint public buyInAmount;
+    uint256 public buyInAmount;
     uint public challengeCreateDateTime;
     uint public challengeStartDateTime;
     uint public challengeEndDateTime;
@@ -19,7 +19,7 @@ contract Challenge {
     event UserAdded(address _user,uint _amount, uint _numOfParticipants);
     event InsufficientEther(uint _amountSent, uint _buyInAmount);
 
-    function Challenge(uint _challengeId, uint _buyInAmount, uint _challengeCreateDateTime, uint _challengeStartDateTime, uint _challengeEndDateTime) {
+    function Challenge(uint _challengeId, uint256 _buyInAmount, uint _challengeCreateDateTime, uint _challengeStartDateTime, uint _challengeEndDateTime) {
       creator = msg.sender;
       challengeId = _challengeId;
       numOfParticipants = 0;

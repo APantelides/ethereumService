@@ -6,15 +6,22 @@ const web3 = web3Connection.web3;
 
 const testAddressAction = {
   testAddress: (req, res) => {
-    const accounts = web3.eth.accounts;
-    const accountsWBal = [];
-    accounts.forEach((account) => {
-      accountsWBal.push({
-        accountAddr: account,
-        balance: web3.fromWei(web3.eth.getBalance(account), 'ether')
-      });
+    web3.eth.getAccounts((err, result) => {
+      if ( err === null ) {
+        const accounts = result;
+        const accountsWBal = [];
+        accounts.forEach((account) => {
+          accountsWBal.push({
+            accountAddr: account,
+            balance: web3.fromWei(web3.eth.getBalance(account), 'ether')
+          });
+        });
+        res.send(accountsWBal);
+      } else {
+        res.send(err);
+      }
     });
-    res.send(accountsWBal);
+    
   }
 };
 

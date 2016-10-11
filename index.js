@@ -33,7 +33,11 @@ app.post('/api/challenge', (req, res) => {
 });
 
 app.post('/api/addUser', (req, res) => {
-  ethController.addUser(req, res);
+  try {
+    ethController.addUser(req, res);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.post('/api/verifyUser', (req, res) => {
@@ -41,7 +45,11 @@ app.post('/api/verifyUser', (req, res) => {
 });
 
 app.post('/api/outcomeChallenge', (req, res) => {
-  ethController.outcomeChallenge(req, res);
+  try {
+    ethController.outcomeChallenge(req, res);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.post('/api/cancelChallenge', (req, res) => {
@@ -53,7 +61,11 @@ app.get('/api/challenge', (req, res) => {
 });
 
 app.get('/api/accounts', (req, res) => {
-  ethController.testAddress(req, res);
+  try {
+    ethController.testAddress(req, res);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 const server = app.listen(3002, () => {

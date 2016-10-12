@@ -5,9 +5,9 @@ const Promise = require('bluebird');
 const web3 = web3Connection.web3;
 
 const testAddressAction = {
-  testAddress: (req, res) => {
-    var accounts = web3.eth.accounts;
-    res.send(accounts);
+  getBalance: (req, res) => {
+    var balance = web3.eth.getBalance(req.params.addr);
+    res.send(balance);
   }
 };
 

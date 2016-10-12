@@ -68,6 +68,14 @@ app.get('/api/accounts', (req, res) => {
   }
 });
 
+app.get('/api/balance/:addr', (req, res) => {
+  try {
+    ethController.getBalance(req, res);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 const server = app.listen(3002, () => {
   console.log('Ethereum server running on port 3002!');
 });

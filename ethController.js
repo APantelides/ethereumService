@@ -3,6 +3,7 @@ const addUserAction = require('./actions/addUserAction.js');
 const createChallengeAction = require('./actions/createChallengeAction.js');
 const outcomeChallengeAction = require('./actions/outcomeChallengeAction.js');
 const testAddressAction = require('./actions/testAddressAction.js');
+const getBalanceAction = require('./actions/getBalanceAction.js');
 // const cancelChallengeAction = require('./actions/cancelChallengeAction.js');
 const rp = require('request-promise');
 
@@ -34,6 +35,9 @@ const controller = {
   },
   testAddress: (req, res) => {
     testAddressAction.testAddress(req, res);
+  },
+  getBalance: (req, res) => {
+    getBalanceAction.getBalance(req, res);
   }
 };
 module.exports = controller;
